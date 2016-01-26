@@ -12,15 +12,24 @@ import MBProgressHUD
 // Main ViewController
 class RepoResultsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
-    @IBOutlet weak var tableView: UITableViewCell!
+    
     
     var searchBar: UISearchBar!
     var searchSettings = GithubRepoSearchSettings()
 
     var repos: [GithubRepo]!
-
+    
+    
+    
+    @IBOutlet weak var tableView: UITableView!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.delegate = self
+        tableView.dataSource = self
 
         // Initialize the UISearchBar
         searchBar = UISearchBar()
@@ -60,7 +69,9 @@ class RepoResultsViewController: UIViewController, UITableViewDataSource, UITabl
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        cell = tableView.dequeueReusableCellWithIdentifier(<#T##identifier: String##String#>)
+        let cell = tableView.dequeueReusableCellWithIdentifier("RepoCell", forIndexPath: indexPath) as! RepoCell
+        
+        return cell
     }
     
 }
