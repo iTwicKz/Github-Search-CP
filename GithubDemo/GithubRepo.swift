@@ -18,7 +18,7 @@ class GithubRepo: CustomStringConvertible {
 
     var name: String?
     var ownerHandle: String?
-    var ownerAvatarURL: String?
+    var ownerAvatarURL: NSURL?
     var stars: Int?
     var forks: Int?
     var repoDescription: String?
@@ -41,8 +41,8 @@ class GithubRepo: CustomStringConvertible {
             if let ownerHandle = owner["login"] as? String {
                 self.ownerHandle = ownerHandle
             }
-            if let ownerAvatarURL = owner["avatar_url"] as? String {
-                self.ownerAvatarURL = ownerAvatarURL
+            if let ownerAvatarString = owner["avatar_url"] as? String {
+                self.ownerAvatarURL = NSURL(string: ownerAvatarString)
             }
         }
         

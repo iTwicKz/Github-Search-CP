@@ -9,6 +9,25 @@
 import UIKit
 
 class RepoCell: UITableViewCell {
+    
+    
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var starLabel: UILabel!
+    @IBOutlet weak var forkLabel: UILabel!
+    @IBOutlet weak var ownerLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var picImage: UIImageView!
+    
+    var repo: GithubRepo! {
+        didSet {
+            nameLabel.text = repo.name
+            let imageURL = repo.ownerAvatarURL
+            picImage.setImageWithURL(imageURL!)
+            starLabel.text = repo.stars as? String
+            forkLabel.text = repo.forks as? String
+            descriptionLabel.text = repo.description
+        }
+    }
 
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -63,6 +63,15 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="descriptionLabel" destination="9tk-7K-PYb" id="dKV-NN-sb0"/>
+                                            <outlet property="forkLabel" destination="mMZ-72-JUb" id="tki-6M-PHt"/>
+                                            <outlet property="imageView" destination="r5e-MI-bKS" id="eY6-uN-IPa"/>
+                                            <outlet property="nameLabel" destination="NUZ-Ee-KxV" id="4yA-4f-iWq"/>
+                                            <outlet property="ownerLabel" destination="v7z-WO-5G8" id="b1F-Ca-yNv"/>
+                                            <outlet property="picImage" destination="r5e-MI-bKS" id="U7m-t8-d8l"/>
+                                            <outlet property="starLabel" destination="usc-xm-OcY" id="4Eh-JF-zd2"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
