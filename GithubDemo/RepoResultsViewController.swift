@@ -83,6 +83,11 @@ class RepoResultsViewController: UIViewController, UITableViewDataSource, UITabl
         return cell
     }
     
+    func configureTableView() {
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 160.0
+    }
+    
 }
 
 // SearchBar methods

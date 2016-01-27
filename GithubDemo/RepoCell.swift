@@ -23,9 +23,10 @@ class RepoCell: UITableViewCell {
             nameLabel.text = repo.name
             let imageURL = repo.ownerAvatarURL
             picImage.setImageWithURL(imageURL!)
-            starLabel.text = repo.stars as? String
-            forkLabel.text = repo.forks as? String
-            descriptionLabel.text = repo.description
+            starLabel.text = String(repo.stars!)
+            forkLabel.text = String(repo.forks!)
+            descriptionLabel.text = repo.repoDescription
+            
         }
     }
 
